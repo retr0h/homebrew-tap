@@ -12,39 +12,39 @@ class GoGilt < Formula
   depends_on "go" => :optional
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/retr0h/go-gilt/releases/download/v1.0.1/go-gilt_1.0.1_darwin_amd64"
-      sha256 "0e5b30d2b44025141c4e74b03ad66885b366bed196848c20b518d6bfe1a257be"
-
-      def install
-        bin.install "go-gilt_1.0.1_darwin_amd64" => "go-gilt"
-      end
-    end
     if Hardware::CPU.arm?
       url "https://github.com/retr0h/go-gilt/releases/download/v1.0.1/go-gilt_1.0.1_darwin_arm64"
-      sha256 "6b85b5271e7cb29b814ecaa8d1c46b8fe2e9295155456fab6e0e7ba3017856d2"
+      sha256 "35c1be79367dead56166ed301fe44f33e6c20d48ce6733fbfc16b94ced67e918"
 
       def install
         bin.install "go-gilt_1.0.1_darwin_arm64" => "go-gilt"
       end
     end
+    if Hardware::CPU.intel?
+      url "https://github.com/retr0h/go-gilt/releases/download/v1.0.1/go-gilt_1.0.1_darwin_amd64"
+      sha256 "8706fc594b87df5db934577922879887b5063cc8f22a7583bd3a729ad4508624"
+
+      def install
+        bin.install "go-gilt_1.0.1_darwin_amd64" => "go-gilt"
+      end
+    end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/retr0h/go-gilt/releases/download/v1.0.1/go-gilt_1.0.1_linux_amd64"
-      sha256 "a6d08d63bcdced300ea5a1897cf81fac993a246760d4b33b18cb290952b60cf8"
-
-      def install
-        bin.install "go-gilt_1.0.1_linux_amd64" => "go-gilt"
-      end
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/retr0h/go-gilt/releases/download/v1.0.1/go-gilt_1.0.1_linux_arm64"
-      sha256 "6d121f5303444c586f89ec04b90aceac2965577dacd637377d51aea8088294cb"
+      sha256 "4d353a53db42ab5debba44d5b2a302ba6318805e59417ea2916eb1bbcdbb9838"
 
       def install
         bin.install "go-gilt_1.0.1_linux_arm64" => "go-gilt"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/retr0h/go-gilt/releases/download/v1.0.1/go-gilt_1.0.1_linux_amd64"
+      sha256 "814a56dcd5dd26fd359afbd5cdce6899c60c14e4a09cc154dc74846f748df873"
+
+      def install
+        bin.install "go-gilt_1.0.1_linux_amd64" => "go-gilt"
       end
     end
   end
