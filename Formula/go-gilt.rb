@@ -5,46 +5,46 @@
 class GoGilt < Formula
   desc "A GIT layering tool"
   homepage "https://github.com/retr0h/go-gilt"
-  version "1.0"
+  version "1.0.1"
   license "MIT"
 
   depends_on "git"
   depends_on "go" => :optional
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/retr0h/go-gilt/releases/download/v1.0/go-gilt_1.0_darwin_arm64"
-      sha256 "d158cf46205d8d9030d545f8fe4b75cc5eadfd569d89900df1dea1c785c0afc2"
+    if Hardware::CPU.intel?
+      url "https://github.com/retr0h/go-gilt/releases/download/v1.0.1/go-gilt_1.0.1_darwin_amd64"
+      sha256 "0e5b30d2b44025141c4e74b03ad66885b366bed196848c20b518d6bfe1a257be"
 
       def install
-        bin.install "go-gilt_1.0_darwin_arm64" => "go-gilt"
+        bin.install "go-gilt_1.0.1_darwin_amd64" => "go-gilt"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/retr0h/go-gilt/releases/download/v1.0/go-gilt_1.0_darwin_amd64"
-      sha256 "37b15f4808f58117139851dbf08a1e1ca0dd2ec88a271847a4b2e9842143fe85"
+    if Hardware::CPU.arm?
+      url "https://github.com/retr0h/go-gilt/releases/download/v1.0.1/go-gilt_1.0.1_darwin_arm64"
+      sha256 "6b85b5271e7cb29b814ecaa8d1c46b8fe2e9295155456fab6e0e7ba3017856d2"
 
       def install
-        bin.install "go-gilt_1.0_darwin_amd64" => "go-gilt"
+        bin.install "go-gilt_1.0.1_darwin_arm64" => "go-gilt"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/retr0h/go-gilt/releases/download/v1.0/go-gilt_1.0_linux_amd64"
-      sha256 "658a8f95067b222b213ab0efc699804ccec3cfd53d3ddcf6f77ee3a30f7a32f1"
+      url "https://github.com/retr0h/go-gilt/releases/download/v1.0.1/go-gilt_1.0.1_linux_amd64"
+      sha256 "a6d08d63bcdced300ea5a1897cf81fac993a246760d4b33b18cb290952b60cf8"
 
       def install
-        bin.install "go-gilt_1.0_linux_amd64" => "go-gilt"
+        bin.install "go-gilt_1.0.1_linux_amd64" => "go-gilt"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/retr0h/go-gilt/releases/download/v1.0/go-gilt_1.0_linux_arm64"
-      sha256 "c2053de765f409810d8f93fae821feb9ae6b95f47786c80b5410f9fafda3fe22"
+      url "https://github.com/retr0h/go-gilt/releases/download/v1.0.1/go-gilt_1.0.1_linux_arm64"
+      sha256 "6d121f5303444c586f89ec04b90aceac2965577dacd637377d51aea8088294cb"
 
       def install
-        bin.install "go-gilt_1.0_linux_arm64" => "go-gilt"
+        bin.install "go-gilt_1.0.1_linux_arm64" => "go-gilt"
       end
     end
   end
