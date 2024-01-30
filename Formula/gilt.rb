@@ -5,46 +5,36 @@
 class Gilt < Formula
   desc "A GIT layering tool"
   homepage "https://github.com/retr0h/gilt"
-  version "2.1"
+  version "2.1.1"
   license "MIT"
 
   depends_on "git"
   depends_on "go" => :optional
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/retr0h/gilt/releases/download/v2.1/gilt_2.1_darwin_amd64"
-      sha256 "891ba5ff86a1adbb4abfd6225d093afed053f4ccc01629bc1c8ccfbbc43f290e"
+    url "https://github.com/retr0h/gilt/releases/download/v2.1.1/gilt_2.1.1_darwin_all"
+    sha256 "68743e79dd38340573360a7bc6a6b343494b7fdb5d9a192576907a7b49fc4e28"
 
-      def install
-        bin.install "gilt_2.1_darwin_amd64" => "gilt"
-      end
-    end
-    if Hardware::CPU.arm?
-      url "https://github.com/retr0h/gilt/releases/download/v2.1/gilt_2.1_darwin_arm64"
-      sha256 "c57291ef389ca66a1056d6cbd00d937a1d5f62671984010500f24e200ae1883d"
-
-      def install
-        bin.install "gilt_2.1_darwin_arm64" => "gilt"
-      end
+    def install
+      bin.install "gilt_2.1.1_darwin_all" => "gilt"
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/retr0h/gilt/releases/download/v2.1/gilt_2.1_linux_arm64"
-      sha256 "a7efffefd974813b348ffec06ac3e91ec748e9deea086a0f797222677e1f5ccf"
+    if Hardware::CPU.intel?
+      url "https://github.com/retr0h/gilt/releases/download/v2.1.1/gilt_2.1.1_linux_amd64"
+      sha256 "824dac7853dea28c2e69832bfc07c8d75fc9b7e66338c0535640b79b3c3089ee"
 
       def install
-        bin.install "gilt_2.1_linux_arm64" => "gilt"
+        bin.install "gilt_2.1.1_linux_amd64" => "gilt"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/retr0h/gilt/releases/download/v2.1/gilt_2.1_linux_amd64"
-      sha256 "f6a9f17593a1d980c957be7595a95311be3c3acfc57d75e0aec25828adeaf5d4"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/retr0h/gilt/releases/download/v2.1.1/gilt_2.1.1_linux_arm64"
+      sha256 "9bb7bc1415a185fadee810b8e560dde8af69a2df4f70c5c84f93fff3642d305d"
 
       def install
-        bin.install "gilt_2.1_linux_amd64" => "gilt"
+        bin.install "gilt_2.1.1_linux_arm64" => "gilt"
       end
     end
   end
