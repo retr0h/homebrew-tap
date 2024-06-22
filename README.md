@@ -2,10 +2,10 @@
 
 @retr0h maintained Homebrew Formulae
 
-## [Gilt][go-gilt]
+## [Gilt][gilt]
 
 ```bash
 brew install retr0h/tap/gilt
 ```
 
-[go-gilt]: https://retr0h.github.io/gilt/
+[gilt]: https://retr0h.github.io/gilt/
