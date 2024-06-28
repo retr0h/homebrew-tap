@@ -5,36 +5,40 @@
 class Gilt < Formula
   desc "A GIT layering tool"
   homepage "https://github.com/retr0h/gilt"
-  version "2.2.1"
+  version "2.2.2"
   license "MIT"
 
   depends_on "git"
   depends_on "go" => :optional
 
   on_macos do
-    url "https://github.com/retr0h/gilt/releases/download/v2.2.1/gilt_2.2.1_darwin_all"
-    sha256 "c6be7215dfac562e1b9e83747b944a421c2b03f98b1da54f4dbe0aecef123798"
+    url "https://github.com/retr0h/gilt/releases/download/v2.2.2/gilt_2.2.2_darwin_all"
+    sha256 "69f98883668fd8f23b269d525b7cee599d946a9535da4b92fb8dbd99a25f4ed0"
 
     def install
-      bin.install "gilt_2.2.1_darwin_all" => "gilt"
+      bin.install "gilt_2.2.2_darwin_all" => "gilt"
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/retr0h/gilt/releases/download/v2.2.1/gilt_2.2.1_linux_amd64"
-      sha256 "3051b49525a11a140c747de629787f4e02f2ad772c792ad287192ed37edb3e43"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/retr0h/gilt/releases/download/v2.2.2/gilt_2.2.2_linux_amd64"
+        sha256 "d8aee5f043c8ae386c0e01e2ddeed5d8dabf2aa51a6883aff7c17fc0376054a8"
 
-      def install
-        bin.install "gilt_2.2.1_linux_amd64" => "gilt"
+        def install
+          bin.install "gilt_2.2.2_linux_amd64" => "gilt"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/retr0h/gilt/releases/download/v2.2.1/gilt_2.2.1_linux_arm64"
-      sha256 "d8231b36a83f373757e53bb291a26999a17d52d1fe74e3edf75f10a776e61de6"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/retr0h/gilt/releases/download/v2.2.2/gilt_2.2.2_linux_arm64"
+        sha256 "dc5e79ca199dec07d315887efe4b01ed700ab9ea0f9e6c417b5e7d4c0a52dccd"
 
-      def install
-        bin.install "gilt_2.2.1_linux_arm64" => "gilt"
+        def install
+          bin.install "gilt_2.2.2_linux_arm64" => "gilt"
+        end
       end
     end
   end
