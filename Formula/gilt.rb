@@ -13,7 +13,7 @@ class Gilt < Formula
 
   on_macos do
     url "https://github.com/retr0h/gilt/releases/download/v2.2.5/gilt_2.2.5_darwin_all"
-    sha256 "75f9269f7c9937e478b0c9cd6bbd7e203369c98089ad5c50f19fbe24409f24ec"
+    sha256 "0bee4ba8a5136e8685f049b598d46fac45b1d634f631e42075fb2d1b4c2e4817"
 
     def install
       bin.install "gilt_2.2.5_darwin_all" => "gilt"
@@ -23,14 +23,14 @@ class Gilt < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/retr0h/gilt/releases/download/v2.2.5/gilt_2.2.5_linux_amd64"
-      sha256 "cacaea1046608f86b5060a566d436998c9ab159dd97b180a80ed3b02435e1f9f"
+      sha256 "df1b6915cfb593999a93ab0fcc60b17691029f605dd747a641ba1d87ed991d8e"
       def install
         bin.install "gilt_2.2.5_linux_amd64" => "gilt"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/retr0h/gilt/releases/download/v2.2.5/gilt_2.2.5_linux_arm64"
-      sha256 "7421c802c766df01c5b2f9fa79e465f74b86f2278de7a4bfc26fa074ca6bd3f8"
+      sha256 "bfc5722b27d47291177f63790ca1a19f217a93ea476c6c91a1697b3f88abb0c7"
       def install
         bin.install "gilt_2.2.5_linux_arm64" => "gilt"
       end
